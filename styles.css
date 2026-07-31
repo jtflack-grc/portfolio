@@ -1565,3 +1565,127 @@ footer {
     gap: 0.8rem;
   }
 }
+
+/* Final cascade: signal-field system */
+:root {
+  --max: 1320px;
+}
+body {
+  background: #050c09 url("signal-field.svg") center top /
+    max(1400px, 100vw) auto repeat-y fixed;
+}
+.site-header {
+  border-bottom-color: rgba(127, 255, 178, 0.2);
+  box-shadow: 0 12px 38px rgba(0, 0, 0, 0.18);
+}
+.hero {
+  min-height: 750px;
+  grid-template-columns: minmax(0, 1.32fr) minmax(360px, 0.68fr);
+  gap: clamp(4rem, 7vw, 7.5rem);
+  padding-top: 6.5rem;
+  padding-bottom: 5.75rem;
+}
+.hero-copy {
+  padding-left: 1.2rem;
+  border-left: 1px solid rgba(127, 255, 178, 0.24);
+}
+.hero h1 {
+  max-width: 860px;
+  font-size: clamp(3.6rem, 5.5vw, 5.85rem);
+  line-height: 0.98;
+  letter-spacing: -0.058em;
+}
+.hero-lede {
+  max-width: 690px;
+  margin-top: 2.45rem;
+  font-size: 1.12rem;
+}
+.hero-console {
+  border: 1px solid rgba(127, 255, 178, 0.22);
+  border-left: 2px solid rgba(127, 255, 178, 0.48);
+  background: rgba(3, 13, 8, 0.82);
+  box-shadow:
+    24px 28px 0 rgba(2, 8, 5, 0.42),
+    0 28px 80px rgba(0, 0, 0, 0.3);
+}
+.signal-strip {
+  min-height: 68px;
+  border-bottom: 1px solid rgba(127, 255, 178, 0.1);
+  background: rgba(3, 11, 7, 0.68);
+  backdrop-filter: blur(6px);
+}
+.section-heading h2 {
+  max-width: 900px;
+  font-size: clamp(2.8rem, 4.6vw, 4.8rem);
+  line-height: 1.02;
+}
+.flagship {
+  border-top: 2px solid var(--green2);
+  background: rgba(4, 13, 8, 0.72);
+  box-shadow: 0 42px 90px rgba(0, 0, 0, 0.2);
+}
+.flagship-visual {
+  background:
+    linear-gradient(rgba(3, 10, 6, 0.62), rgba(3, 10, 6, 0.86)),
+    url("signal-field.svg") center / 1350px auto;
+}
+.terminal-window {
+  transform: translateX(-0.8rem);
+  box-shadow:
+    18px 22px 0 rgba(2, 8, 5, 0.62),
+    0 28px 65px rgba(0, 0, 0, 0.45),
+    0 0 46px rgba(56, 232, 129, 0.06);
+}
+.project-grid {
+  background: rgba(3, 10, 6, 0.36);
+}
+.project-card {
+  min-height: 390px;
+}
+.project-card h3 {
+  max-width: 92%;
+  font-size: 2rem;
+}
+.brand-art {
+  background:
+    linear-gradient(rgba(3, 10, 6, 0.68), rgba(3, 10, 6, 0.86)),
+    url("signal-field.svg") center / 1280px auto;
+}
+:root[data-theme="light"] body {
+  background: var(--ink);
+}
+:root[data-theme="light"] .hero-console {
+  background: rgba(227, 235, 229, 0.92);
+  box-shadow: none;
+}
+:root[data-theme="light"] .flagship,
+:root[data-theme="light"] .project-grid {
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .hero-copy {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .hero-console {
+    max-width: 680px;
+  }
+  .terminal-window {
+    transform: none;
+  }
+}
+@media (max-width: 560px) {
+  body {
+    background-size: auto 760px;
+  }
+  .hero h1 {
+    font-size: clamp(3rem, 13.5vw, 4rem);
+    line-height: 1.01;
+  }
+}
