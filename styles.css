@@ -1703,14 +1703,7 @@ body {
   text-shadow: 0 0 26px rgba(56, 232, 129, 0.12);
 }
 .hero h1 em:after {
-  content: "";
-  position: absolute;
-  left: 0.04em;
-  right: 0.02em;
-  bottom: -0.09em;
-  height: 2px;
-  background: linear-gradient(90deg, var(--green2), transparent 88%);
-  box-shadow: 0 0 12px rgba(56, 232, 129, 0.38);
+  display: none;
 }
 .hero-dateline {
   display: flex;
@@ -1841,6 +1834,42 @@ body {
 }
 :root[data-theme="light"] .flagship {
   background: var(--panel);
+}
+html {
+  scrollbar-color: rgba(127, 255, 178, 0.34) var(--ink);
+}
+.section,
+#top,
+#work,
+#method,
+#about,
+#connect {
+  scroll-margin-top: 90px;
+}
+.project-grid {
+  background: rgba(3, 10, 6, 0.58);
+}
+.button,
+.text-link,
+.about-links a {
+  min-height: 44px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 4px;
+}
+.brand,
+nav a,
+.header-cta,
+.button,
+.text-link,
+.about-links a {
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 :root[data-theme="light"] .project-grid {
   background: transparent;
