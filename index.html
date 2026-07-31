@@ -9,6 +9,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'light') {
+        document.documentElement.dataset.theme = 'light';
+      }
+    } catch (_) {}
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -25,7 +32,14 @@
       <a href="#about">About</a>
       <a href="#connect">Connect</a>
     </nav>
-    <a class="header-cta" href="https://github.com/jtflack-grc" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span><span class="external-arrow">↗</span></a>
+    <div class="header-actions">
+      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.2 12h2.1M19.7 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <span class="theme-label">Light</span>
+      </button>
+      <a class="header-cta" href="https://github.com/jtflack-grc" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span><span class="external-arrow">↗</span></a>
+    </div>
   </header>
 
   <main id="main">
@@ -163,10 +177,17 @@
 
     <section class="section about" id="about">
       <div class="portrait-panel reveal">
-        <div class="brand-art" role="img" aria-label="i on GRC">
-          <span class="brand-art-grid" aria-hidden="true"></span>
-          <span class="brand-art-wordmark"><span>i on</span><strong>GRC</strong></span>
-          <small>GOVERNANCE · RISK · CONTROL</small>
+        <div class="brand-art">
+          <div class="brand-art-lockup" aria-label="i on GRC">
+            <span class="brand-art-wordmark"><span>i on</span><strong>GRC</strong></span>
+            <span class="brand-art-rule" aria-hidden="true"></span>
+          </div>
+          <p class="brand-art-kicker">Field notes from the operational layer</p>
+          <dl class="brand-art-notes">
+            <div><dt>Operate</dt><dd>Know how the system actually behaves.</dd></div>
+            <div><dt>Prove</dt><dd>Leave evidence another person can inspect.</dd></div>
+            <div><dt>Decide</dt><dd>Translate the facts into accountable choices.</dd></div>
+          </dl>
         </div>
       </div>
       <div class="about-copy reveal">
