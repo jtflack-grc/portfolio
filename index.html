@@ -1,224 +1,588 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="John Flack's governance engineering portfolio: technology risk made visible, testable, and decision-ready.">
-  <meta name="theme-color" content="#050a08">
-  <title>i on GRC | John Flack</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script>
-    try {
-      if (localStorage.getItem('portfolio-theme') === 'light') {
-        document.documentElement.dataset.theme = 'light';
-      }
-    } catch (_) {}
-  </script>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="noise" aria-hidden="true"></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="John Flack's governance engineering portfolio: technology risk made visible, testable, and decision-ready."
+    />
+    <meta
+      name="theme-color"
+      content="#07100c"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#edf3ef"
+      media="(prefers-color-scheme: light)"
+    />
+    <link rel="canonical" href="https://jtflack-grc.github.io/portfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="i on GRC" />
+    <meta property="og:title" content="i on GRC | John Flack" />
+    <meta
+      property="og:description"
+      content="Governance engineering across legacy infrastructure, cyber risk, AI governance, and operational resilience."
+    />
+    <meta
+      property="og:url"
+      content="https://jtflack-grc.github.io/portfolio/"
+    />
+    <meta
+      property="og:image"
+      content="https://jtflack-grc.github.io/portfolio/social-card.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="i on GRC — technology risk made visible, testable, and decision-ready."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="i on GRC | John Flack" />
+    <meta
+      name="twitter:description"
+      content="Governance engineering across legacy infrastructure, cyber risk, AI governance, and operational resilience."
+    />
+    <meta
+      name="twitter:image"
+      content="https://jtflack-grc.github.io/portfolio/social-card.png"
+    />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <title>i on GRC | John Flack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      try {
+        if (localStorage.getItem("portfolio-theme") === "light") {
+          document.documentElement.dataset.theme = "light";
+        }
+      } catch (_) {}
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="i on GRC home">
-      <span class="brand-wordmark"><span>i on</span><strong>GRC</strong></span>
-    </a>
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a>
-      <a href="#method">Method</a>
-      <a href="#about">About</a>
-      <a href="#connect">Connect</a>
-    </nav>
-    <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Switch to light theme" aria-pressed="false">
-        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.2 12h2.1M19.7 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
-        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-        <span class="theme-label">Light</span>
-      </button>
-      <a class="header-cta" href="https://github.com/jtflack-grc" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span><span class="external-arrow">↗</span></a>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-copy reveal">
-        <p class="eyebrow"><span class="status-dot"></span> Governance engineering portfolio</p>
-        <h1>Making technology risk <em>visible, testable,</em> and decision-ready.</h1>
-        <p class="hero-lede">I build practical systems that connect technical evidence to accountable decisions—across legacy infrastructure, cyber risk, AI governance, and operational resilience.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#work">Explore the work <span>↓</span></a>
-          <a class="button button-ghost" href="https://www.linkedin.com/in/john-flack" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"/></svg><span>LinkedIn</span><span class="external-arrow">↗</span></a>
-        </div>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="i on GRC home">
+        <span class="brand-wordmark"
+          ><span>i on</span><strong>GRC</strong></span
+        >
+      </a>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#method">Method</a>
+        <a href="#about">About</a>
+        <a href="#connect">Connect</a>
+      </nav>
+      <div class="header-actions">
+        <button
+          class="theme-toggle"
+          type="button"
+          aria-label="Switch to light theme"
+          aria-pressed="false"
+        >
+          <svg
+            class="theme-icon theme-icon-sun"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="3.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+            />
+            <path
+              d="M12 2.2v2.1M12 19.7v2.1M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2.2 12h2.1M19.7 12h2.1M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+            />
+          </svg>
+          <svg
+            class="theme-icon theme-icon-moon"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path
+              d="M20 15.2A8.2 8.2 0 0 1 8.8 4a8.2 8.2 0 1 0 11.2 11.2Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span class="theme-label">Light</span>
+        </button>
+        <a
+          class="header-cta"
+          href="https://github.com/jtflack-grc"
+          target="_blank"
+          rel="noreferrer"
+          ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"
+            /></svg
+          ><span>GitHub</span><span class="external-arrow">↗</span></a
+        >
       </div>
-      <aside class="hero-console reveal" aria-label="Portfolio operating view">
-        <div class="console-bar"><span></span><span></span><span></span><b>SYSTEM VIEW</b></div>
-        <div class="console-body">
-          <p><span>01</span> Evidence engineering</p>
-          <p><span>02</span> Quantitative risk</p>
-          <p><span>03</span> AI governance</p>
-          <p><span>04</span> Legacy resilience</p>
-          <div class="console-rule"></div>
-          <small>CONTROL EVIDENCE, FROM THE GREEN SCREEN OUT.</small>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">
+            <span class="status-dot"></span> Governance engineering portfolio
+          </p>
+          <h1>
+            Making technology risk <em>visible, testable,</em> and
+            decision-ready.
+          </h1>
+          <p class="hero-lede">
+            I build practical systems that connect technical evidence to
+            accountable decisions—across legacy infrastructure, cyber risk, AI
+            governance, and operational resilience.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work"
+              >Explore the work <span>↓</span></a
+            >
+            <a
+              class="button button-ghost"
+              href="https://www.linkedin.com/in/john-flack"
+              target="_blank"
+              rel="noreferrer"
+              ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"
+                /></svg
+              ><span>LinkedIn</span><span class="external-arrow">↗</span></a
+            >
+          </div>
         </div>
-      </aside>
-    </section>
+        <aside
+          class="hero-console reveal"
+          aria-label="Portfolio operating view"
+        >
+          <div class="console-bar">
+            <span></span><span></span><span></span><b>SYSTEM VIEW</b>
+          </div>
+          <div class="console-body">
+            <p><span>01</span> Evidence engineering</p>
+            <p><span>02</span> Quantitative risk</p>
+            <p><span>03</span> AI governance</p>
+            <p><span>04</span> Legacy resilience</p>
+            <div class="console-rule"></div>
+            <small>CONTROL EVIDENCE, FROM THE GREEN SCREEN OUT.</small>
+          </div>
+        </aside>
+      </section>
 
-    <section class="signal-strip" aria-label="Areas of practice">
-      <span>IBM i</span><i></i><span>GRC Engineering</span><i></i><span>FAIR</span><i></i><span>OSCAL</span><i></i><span>AI Governance</span><i></i><span>Operational Resilience</span>
-    </section>
+      <section class="signal-strip" aria-label="Areas of practice">
+        <span>IBM i</span><i></i><span>GRC Engineering</span><i></i
+        ><span>FAIR</span><i></i><span>OSCAL</span><i></i
+        ><span>AI Governance</span><i></i><span>Operational Resilience</span>
+      </section>
 
-    <section class="section work" id="work">
-      <div class="section-heading reveal">
-        <div><p class="eyebrow">Selected systems</p><h2>Work that can be inspected,<br>not merely described.</h2></div>
-        <p>Each project starts with a governance problem and ends with something usable: a lab, a decision model, a control pipeline, or an accountable intervention.</p>
-      </div>
+      <section class="section work" id="work">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Selected systems</p>
+            <h2>Work that can be inspected,<br />not merely described.</h2>
+          </div>
+          <p>
+            Each project starts with a governance problem and ends with
+            something usable: a lab, a decision model, a control pipeline, or an
+            accountable intervention.
+          </p>
+        </div>
 
-      <article class="flagship reveal">
-        <div class="flagship-visual">
-          <div class="terminal-window">
-            <div class="terminal-top"><span>CLAIMS400</span><span>LEGACY CONTROL LAB</span><span>01</span></div>
-            <div class="terminal-screen">
-              <p class="term-title">Can You Prove IBM i Security?</p>
-              <div class="term-row"><span>CONTROL</span><b>PR.AA-05</b><span>STATUS</span><b class="amber">EVIDENCE DUE</b></div>
-              <div class="term-panel">
-                <p>&gt; REVIEW PRIVILEGED PROFILES</p>
-                <p>&gt; TRACE JOURNAL EVIDENCE</p>
-                <p>&gt; PACKAGE AUDIT ARTIFACT</p>
-                <p class="cursor">&gt; _</p>
+        <article class="flagship reveal">
+          <div class="flagship-visual">
+            <div class="terminal-window">
+              <div class="terminal-top">
+                <span>CLAIMS400</span><span>LEGACY CONTROL LAB</span
+                ><span>01</span>
               </div>
-              <small>F3=Exit &nbsp; F5=Refresh &nbsp; F12=Cancel</small>
+              <div class="terminal-screen">
+                <p class="term-title">Can You Prove IBM i Security?</p>
+                <div class="term-row">
+                  <span>CONTROL</span><b>PR.AA-05</b><span>STATUS</span
+                  ><b class="amber">EVIDENCE DUE</b>
+                </div>
+                <div class="term-panel">
+                  <p>&gt; REVIEW PRIVILEGED PROFILES</p>
+                  <p>&gt; TRACE JOURNAL EVIDENCE</p>
+                  <p>&gt; PACKAGE AUDIT ARTIFACT</p>
+                  <p class="cursor">&gt; _</p>
+                </div>
+                <small>F3=Exit &nbsp; F5=Refresh &nbsp; F12=Cancel</small>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="flagship-copy">
-          <p class="project-index">01 / FLAGSHIP BUILD</p>
-          <h3>Legacy Control Lab</h3>
-          <p class="project-tagline">An IBM i-style governance and security range.</p>
-          <p>A Docker-based interactive lab that makes legacy-system controls visible to people who have never touched a green screen. Learners investigate access, journaling, evidence quality, and audit readiness inside a realistic CLAIMS400 environment.</p>
-          <ul class="tags"><li>IBM i</li><li>Control evidence</li><li>Auditability</li><li>Docker</li></ul>
-          <a class="text-link" href="https://github.com/jtflack-grc/legacy-control-lab" target="_blank" rel="noreferrer">Open the lab on GitHub <span>↗</span></a>
-        </div>
-      </article>
-
-      <div class="project-grid">
-        <article class="project-card amber-card reveal">
-          <div class="card-top"><span>02</span><span>LIVE DECISION TOOL</span></div>
-          <h3>IMPACT!</h3>
-          <p class="project-tagline">Risk-to-finance modeling engine</p>
-          <p>Translates cyber and operational risk into financial language—connecting loss exposure, control investment, and decision context in one browser-based model.</p>
-          <ul class="tags"><li>FAIR</li><li>Financial modeling</li><li>CRQ</li></ul>
-          <a class="text-link" href="https://jtflack-grc.github.io/impact/" target="_blank" rel="noreferrer">Launch IMPACT! <span>↗</span></a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="card-top"><span>03</span><span>DECISION SYSTEM</span></div>
-          <h3>Decision-Ready</h3>
-          <p class="project-tagline">Risk scenario canvas</p>
-          <p>A structured canvas for moving from ambiguous technical concern to decision-ready risk scenario, with assumptions and accountability kept visible.</p>
-          <ul class="tags"><li>Risk scenarios</li><li>Executive translation</li></ul>
-          <a class="text-link" href="https://jtflack-grc.github.io/decision-ready/" target="_blank" rel="noreferrer">Open the canvas <span>↗</span></a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="card-top"><span>04</span><span>CONTROL PIPELINE</span></div>
-          <h3>GRC Engineering Pipeline</h3>
-          <p class="project-tagline">Controls that ship with the system</p>
-          <p>Terraform, OPA/Rego, OSCAL, signed evidence, and CI/CD enforcement assembled into a verifiable governance pipeline for a regulated workload.</p>
-          <ul class="tags"><li>OSCAL</li><li>Policy-as-code</li><li>Evidence</li></ul>
-          <a class="text-link" href="https://github.com/jtflack-grc/grc-engineering-pipeline" target="_blank" rel="noreferrer">Inspect the pipeline <span>↗</span></a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="card-top"><span>05</span><span>AI GOVERNANCE</span></div>
-          <h3>AI Fairness Governance Toolkit</h3>
-          <p class="project-tagline">From model metric to accountable intervention</p>
-          <p>A governance-oriented fairness pipeline that frames model evaluation as a documented decision process—not a single score or technical checkbox.</p>
-          <ul class="tags"><li>Responsible AI</li><li>Fairness</li><li>Governance</li></ul>
-          <a class="text-link" href="https://github.com/jtflack-grc/ai-fairness-governance-toolkit" target="_blank" rel="noreferrer">View the toolkit <span>↗</span></a>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="card-top"><span>06</span><span>LONG-HORIZON AI</span></div>
-          <h3>Inheritance</h3>
-          <p class="project-tagline">Who inherits the consequences?</p>
-          <p>An interactive exploration of long-horizon AI decisions, moral uncertainty, and how present choices propagate consequences to future stakeholders.</p>
-          <ul class="tags"><li>AI safety</li><li>Values</li><li>Futures</li></ul>
-          <a class="text-link" href="https://github.com/jtflack-grc/inheritance" target="_blank" rel="noreferrer">Explore the project <span>↗</span></a>
-        </article>
-
-        <article class="project-card lab-card reveal">
-          <div class="card-top"><span>07+</span><span>WORKING LAB</span></div>
-          <h3>More systems in the lab</h3>
-          <p>Security Decision Labs, the CGE-P capstone, five GRC Engineering Club builds, and new cloud-native evidence experiments.</p>
-          <div class="repo-list">
-            <a href="https://github.com/jtflack-grc/security-decision-labs" target="_blank" rel="noreferrer"><span>Security Decision Labs</span><b>↗</b></a>
-            <a href="https://github.com/jtflack-grc/cgep-capstone" target="_blank" rel="noreferrer"><span>CGE-P Capstone</span><b>↗</b></a>
-            <a href="https://github.com/jtflack-grc?tab=repositories" target="_blank" rel="noreferrer"><span>All repositories</span><b>↗</b></a>
+          <div class="flagship-copy">
+            <p class="project-index">01 / FLAGSHIP BUILD</p>
+            <h3>Legacy Control Lab</h3>
+            <p class="project-tagline">
+              An IBM i-style governance and security range.
+            </p>
+            <p>
+              A Docker-based interactive lab that makes legacy-system controls
+              visible to people who have never touched a green screen. Learners
+              investigate access, journaling, evidence quality, and audit
+              readiness inside a realistic CLAIMS400 environment.
+            </p>
+            <ul class="tags">
+              <li>IBM i</li>
+              <li>Control evidence</li>
+              <li>Auditability</li>
+              <li>Docker</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/jtflack-grc/legacy-control-lab"
+              target="_blank"
+              rel="noreferrer"
+              >Open the lab on GitHub <span>↗</span></a
+            >
           </div>
         </article>
-      </div>
-    </section>
 
-    <section class="section method" id="method">
-      <div class="section-heading reveal">
-        <div><p class="eyebrow">Operating stance</p><h2>Governance should leave<br>a system behind.</h2></div>
-        <p>Framework fluency matters. The harder work is turning requirements into operating structures that keep producing evidence and better decisions after the workshop ends.</p>
-      </div>
-      <div class="method-grid">
-        <article class="reveal"><span>01</span><h3>Expose the system</h3><p>Start with how technology actually operates—its identities, dependencies, failure modes, and inherited constraints.</p></article>
-        <article class="reveal"><span>02</span><h3>Engineer the evidence</h3><p>Make control performance inspectable and reproducible instead of rebuilding the audit story from screenshots.</p></article>
-        <article class="reveal"><span>03</span><h3>Translate the decision</h3><p>Connect technical facts to scenarios, financial exposure, accountability, and the choices leaders must make.</p></article>
-      </div>
-    </section>
+        <div class="project-grid">
+          <article class="project-card amber-card reveal">
+            <div class="card-top">
+              <span>02</span><span>LIVE DECISION TOOL</span>
+            </div>
+            <h3>IMPACT!</h3>
+            <p class="project-tagline">Risk-to-finance modeling engine</p>
+            <p>
+              Translates cyber and operational risk into financial
+              language—connecting loss exposure, control investment, and
+              decision context in one browser-based model.
+            </p>
+            <ul class="tags">
+              <li>FAIR</li>
+              <li>Financial modeling</li>
+              <li>CRQ</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://jtflack-grc.github.io/impact/"
+              target="_blank"
+              rel="noreferrer"
+              >Launch IMPACT! <span>↗</span></a
+            >
+          </article>
 
-    <section class="section about" id="about">
-      <div class="portrait-panel reveal">
-        <div class="brand-art">
-          <div class="brand-art-lockup" aria-label="i on GRC">
-            <span class="brand-art-wordmark"><span>i on</span><strong>GRC</strong></span>
-            <span class="brand-art-rule" aria-hidden="true"></span>
+          <article class="project-card reveal">
+            <div class="card-top">
+              <span>03</span><span>DECISION SYSTEM</span>
+            </div>
+            <h3>Decision-Ready</h3>
+            <p class="project-tagline">Risk scenario canvas</p>
+            <p>
+              A structured canvas for moving from ambiguous technical concern to
+              decision-ready risk scenario, with assumptions and accountability
+              kept visible.
+            </p>
+            <ul class="tags">
+              <li>Risk scenarios</li>
+              <li>Executive translation</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://jtflack-grc.github.io/decision-ready/"
+              target="_blank"
+              rel="noreferrer"
+              >Open the canvas <span>↗</span></a
+            >
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top">
+              <span>04</span><span>CONTROL PIPELINE</span>
+            </div>
+            <h3>GRC Engineering Pipeline</h3>
+            <p class="project-tagline">Controls that ship with the system</p>
+            <p>
+              Terraform, OPA/Rego, OSCAL, signed evidence, and CI/CD enforcement
+              assembled into a verifiable governance pipeline for a regulated
+              workload.
+            </p>
+            <ul class="tags">
+              <li>OSCAL</li>
+              <li>Policy-as-code</li>
+              <li>Evidence</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/jtflack-grc/grc-engineering-pipeline"
+              target="_blank"
+              rel="noreferrer"
+              >Inspect the pipeline <span>↗</span></a
+            >
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top">
+              <span>05</span><span>AI GOVERNANCE</span>
+            </div>
+            <h3>AI Fairness Governance Toolkit</h3>
+            <p class="project-tagline">
+              From model metric to accountable intervention
+            </p>
+            <p>
+              A governance-oriented fairness pipeline that frames model
+              evaluation as a documented decision process—not a single score or
+              technical checkbox.
+            </p>
+            <ul class="tags">
+              <li>Responsible AI</li>
+              <li>Fairness</li>
+              <li>Governance</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/jtflack-grc/ai-fairness-governance-toolkit"
+              target="_blank"
+              rel="noreferrer"
+              >View the toolkit <span>↗</span></a
+            >
+          </article>
+
+          <article class="project-card reveal">
+            <div class="card-top">
+              <span>06</span><span>LONG-HORIZON AI</span>
+            </div>
+            <h3>Inheritance</h3>
+            <p class="project-tagline">Who inherits the consequences?</p>
+            <p>
+              An interactive exploration of long-horizon AI decisions, moral
+              uncertainty, and how present choices propagate consequences to
+              future stakeholders.
+            </p>
+            <ul class="tags">
+              <li>AI safety</li>
+              <li>Values</li>
+              <li>Futures</li>
+            </ul>
+            <a
+              class="text-link"
+              href="https://github.com/jtflack-grc/inheritance"
+              target="_blank"
+              rel="noreferrer"
+              >Explore the project <span>↗</span></a
+            >
+          </article>
+
+          <article class="project-card lab-card reveal">
+            <div class="card-top"><span>07+</span><span>WORKING LAB</span></div>
+            <h3>More systems in the lab</h3>
+            <p>
+              Security Decision Labs, the CGE-P capstone, five GRC Engineering
+              Club builds, and new cloud-native evidence experiments.
+            </p>
+            <div class="repo-list">
+              <a
+                href="https://github.com/jtflack-grc/security-decision-labs"
+                target="_blank"
+                rel="noreferrer"
+                ><span>Security Decision Labs</span><b>↗</b></a
+              >
+              <a
+                href="https://github.com/jtflack-grc/cgep-capstone"
+                target="_blank"
+                rel="noreferrer"
+                ><span>CGE-P Capstone</span><b>↗</b></a
+              >
+              <a
+                href="https://github.com/jtflack-grc?tab=repositories"
+                target="_blank"
+                rel="noreferrer"
+                ><span>All repositories</span><b>↗</b></a
+              >
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method" id="method">
+        <div class="section-heading reveal">
+          <div>
+            <p class="eyebrow">Operating stance</p>
+            <h2>Governance should leave<br />a system behind.</h2>
           </div>
-          <p class="brand-art-kicker">Field notes from the operational layer</p>
-          <dl class="brand-art-notes">
-            <div><dt>Operate</dt><dd>Know how the system actually behaves.</dd></div>
-            <div><dt>Prove</dt><dd>Leave evidence another person can inspect.</dd></div>
-            <div><dt>Decide</dt><dd>Translate the facts into accountable choices.</dd></div>
-          </dl>
+          <p>
+            Framework fluency matters. The harder work is turning requirements
+            into operating structures that keep producing evidence and better
+            decisions after the workshop ends.
+          </p>
         </div>
-      </div>
-      <div class="about-copy reveal">
-        <p class="eyebrow">About John Flack</p>
-        <h2>Built from the operational layer up.</h2>
-        <p class="about-lede">I’m a technology-risk and AI-governance practitioner with deep experience operating business-critical healthcare infrastructure.</p>
-        <p>My work sits where legacy systems, control evidence, resilience, risk quantification, and emerging AI governance meet. Years spent inside systems that organizations depend on—but outsiders rarely understand—shaped a practical view of governance: a control is only as useful as the evidence it produces, and risk language only matters if it improves a real decision.</p>
-        <p>Today, I build public tools and learning environments that make those relationships legible—from IBM i evidence at the green screen to FAIR-informed financial models and AI governance interventions.</p>
-        <div class="about-links">
-          <a href="https://www.linkedin.com/in/john-flack" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"/></svg><span>LinkedIn</span><span class="external-arrow">↗</span></a>
-          <a href="https://github.com/jtflack-grc" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"/></svg><span>GitHub</span><span class="external-arrow">↗</span></a>
-          <a href="https://grcengclub.com/chapters/raleigh" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5.5 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm13 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM12 12c4 0 7 2 7 4.7V20H5v-3.3C5 14 8 12 12 12Zm-8.2.5c-2.3.5-3.8 1.8-3.8 3.6V19h3.3v-2.3c0-1.4.6-2.8 1.7-3.8-.4-.2-.8-.3-1.2-.4Zm16.4 0c-.4.1-.8.2-1.2.4 1.1 1 1.7 2.4 1.7 3.8V19H24v-2.9c0-1.8-1.5-3.1-3.8-3.6Z"/></svg><span>GRC Engineering Club Raleigh</span><span class="external-arrow">↗</span></a>
+        <div class="method-grid">
+          <article class="reveal">
+            <span>01</span>
+            <h3>Expose the system</h3>
+            <p>
+              Start with how technology actually operates—its identities,
+              dependencies, failure modes, and inherited constraints.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>02</span>
+            <h3>Engineer the evidence</h3>
+            <p>
+              Make control performance inspectable and reproducible instead of
+              rebuilding the audit story from screenshots.
+            </p>
+          </article>
+          <article class="reveal">
+            <span>03</span>
+            <h3>Translate the decision</h3>
+            <p>
+              Connect technical facts to scenarios, financial exposure,
+              accountability, and the choices leaders must make.
+            </p>
+          </article>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section connect" id="connect">
-      <div class="connect-inner reveal">
-        <p class="eyebrow">Open channel</p>
-        <h2>Let’s make the risk<br><em>inspectable.</em></h2>
-        <p>Interested in governance engineering, legacy-system risk, operational resilience, quantitative cyber risk, or accountable AI systems?</p>
-        <a class="button button-primary" href="https://www.linkedin.com/in/john-flack" target="_blank" rel="noreferrer"><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"/></svg><span>Connect on LinkedIn</span><span class="external-arrow">↗</span></a>
-      </div>
-    </section>
-  </main>
+      <section class="section about" id="about">
+        <div class="portrait-panel reveal">
+          <div class="brand-art">
+            <div class="brand-art-lockup" role="img" aria-label="i on GRC">
+              <span class="brand-art-wordmark"
+                ><span>i on</span><strong>GRC</strong></span
+              >
+              <span class="brand-art-rule" aria-hidden="true"></span>
+            </div>
+            <p class="brand-art-kicker">
+              Field notes from the operational layer
+            </p>
+            <dl class="brand-art-notes">
+              <div>
+                <dt>Operate</dt>
+                <dd>Know how the system actually behaves.</dd>
+              </div>
+              <div>
+                <dt>Prove</dt>
+                <dd>Leave evidence another person can inspect.</dd>
+              </div>
+              <div>
+                <dt>Decide</dt>
+                <dd>Translate the facts into accountable choices.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="about-copy reveal">
+          <p class="eyebrow">About John Flack</p>
+          <h2>Built from the operational layer up.</h2>
+          <p class="about-lede">
+            I’m a technology-risk and AI-governance practitioner with deep
+            experience operating business-critical healthcare infrastructure.
+          </p>
+          <p>
+            My work sits where legacy systems, control evidence, resilience,
+            risk quantification, and emerging AI governance meet. Years spent
+            inside systems that organizations depend on—but outsiders rarely
+            understand—shaped a practical view of governance: a control is only
+            as useful as the evidence it produces, and risk language only
+            matters if it improves a real decision.
+          </p>
+          <p>
+            Today, I build public tools and learning environments that make
+            those relationships legible—from IBM i evidence at the green screen
+            to FAIR-informed financial models and AI governance interventions.
+          </p>
+          <div class="about-links">
+            <a
+              href="https://www.linkedin.com/in/john-flack"
+              target="_blank"
+              rel="noreferrer"
+              ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"
+                /></svg
+              ><span>LinkedIn</span><span class="external-arrow">↗</span></a
+            >
+            <a
+              href="https://github.com/jtflack-grc"
+              target="_blank"
+              rel="noreferrer"
+              ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 .7a11.3 11.3 0 0 0-3.6 22c.6.1.8-.2.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.4-5.5-6a4.7 4.7 0 0 1 1.2-3.2c-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.9.1 3.2a4.7 4.7 0 0 1 1.2 3.2c0 4.7-2.8 5.7-5.5 6 .4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.3 11.3 0 0 0 12 .7Z"
+                /></svg
+              ><span>GitHub</span><span class="external-arrow">↗</span></a
+            >
+            <a
+              href="https://grcengclub.com/chapters/raleigh"
+              target="_blank"
+              rel="noreferrer"
+              ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  d="M12 2a4 4 0 1 1 0 8 4 4 0 0 1 0-8ZM5.5 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm13 0a3 3 0 1 1 0 6 3 3 0 0 1 0-6ZM12 12c4 0 7 2 7 4.7V20H5v-3.3C5 14 8 12 12 12Zm-8.2.5c-2.3.5-3.8 1.8-3.8 3.6V19h3.3v-2.3c0-1.4.6-2.8 1.7-3.8-.4-.2-.8-.3-1.2-.4Zm16.4 0c-.4.1-.8.2-1.2.4 1.1 1 1.7 2.4 1.7 3.8V19H24v-2.9c0-1.8-1.5-3.1-3.8-3.6Z"
+                /></svg
+              ><span>GRC Engineering Club Raleigh</span
+              ><span class="external-arrow">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
 
-  <footer>
-    <a class="brand" href="#top"><span class="brand-wordmark"><span>i on</span><strong>GRC</strong></span></a>
-    <p>John Flack · Governance engineering from the operational layer up.</p>
-    <p class="footer-status"><span class="status-dot"></span> SYSTEM ONLINE · <span id="year"></span></p>
-  </footer>
-  <script src="script.js"></script>
-</body>
+      <section class="section connect" id="connect">
+        <div class="connect-inner reveal">
+          <p class="eyebrow">Open channel</p>
+          <h2>Let’s make the risk<br /><em>inspectable.</em></h2>
+          <p>
+            Interested in governance engineering, legacy-system risk,
+            operational resilience, quantitative cyber risk, or accountable AI
+            systems?
+          </p>
+          <a
+            class="button button-primary"
+            href="https://www.linkedin.com/in/john-flack"
+            target="_blank"
+            rel="noreferrer"
+            ><svg class="link-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M5.4 7.8H1.8V19h3.6V7.8ZM3.6 2.2a2.1 2.1 0 1 0 0 4.2 2.1 2.1 0 0 0 0-4.2ZM19.1 7.5c-1.9 0-3.1 1-3.7 1.9V7.8h-3.6V19h3.6v-5.5c0-1.5.3-2.9 2.1-2.9s1.9 1.7 1.9 3V19H23v-6c0-3.6-.8-5.5-3.9-5.5Z"
+              /></svg
+            ><span>Connect on LinkedIn</span
+            ><span class="external-arrow">↗</span></a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top"
+        ><span class="brand-wordmark"
+          ><span>i on</span><strong>GRC</strong></span
+        ></a
+      >
+      <p>John Flack · Governance engineering from the operational layer up.</p>
+      <p class="footer-status">
+        <span class="status-dot"></span> SYSTEM ONLINE · <span id="year"></span>
+      </p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
 </html>

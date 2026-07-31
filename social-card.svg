@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#07100c"/>
+  <path d="M72 72h1056M72 558h1056" stroke="#254c37" stroke-width="2"/>
+  <circle cx="91" cy="105" r="6" fill="#38e881"/>
+  <text x="112" y="112" fill="#91aa9b" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="3">GOVERNANCE ENGINEERING PORTFOLIO</text>
+  <text x="72" y="290" fill="#7fffb2" font-family="IBM Plex Mono, monospace" font-size="88" font-weight="600" letter-spacing="-4">i on GRC</text>
+  <rect x="365" y="316" width="214" height="7" fill="#f2b84b"/>
+  <text x="72" y="403" fill="#e8f4ec" font-family="IBM Plex Sans, sans-serif" font-size="44" font-weight="300">Technology risk made visible, testable,</text>
+  <text x="72" y="458" fill="#e8f4ec" font-family="IBM Plex Sans, sans-serif" font-size="44" font-weight="300">and decision-ready.</text>
+  <text x="72" y="535" fill="#91aa9b" font-family="IBM Plex Mono, monospace" font-size="20" letter-spacing="2">JOHN FLACK  /  OPERATIONAL LAYER → ACCOUNTABLE DECISION</text>
+</svg>
