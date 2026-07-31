@@ -1277,6 +1277,18 @@ footer {
 :root {
   color-scheme: dark;
 }
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #edf3ef;
+  --panel: #e3ebe5;
+  --panel2: #d9e4dc;
+  --green: #096b3b;
+  --green2: #0b7a43;
+  --muted: #52665a;
+  --line: rgba(19, 72, 43, 0.18);
+  --amber: #9a6100;
+  --white: #142219;
+}
 .header-actions {
   display: flex;
   align-items: center;
@@ -1316,6 +1328,12 @@ footer {
 }
 .theme-icon-moon {
   display: none;
+}
+:root[data-theme="light"] .theme-icon-sun {
+  display: none;
+}
+:root[data-theme="light"] .theme-icon-moon {
+  display: block;
 }
 
 .brand-art {
@@ -1388,6 +1406,70 @@ footer {
 }
 
 /* Light is a paper-and-ink counterpart, not an inverted OLED theme */
+:root[data-theme="light"] body {
+  background: var(--ink);
+  color: var(--white);
+}
+:root[data-theme="light"] .site-header {
+  background: rgba(237, 243, 239, 0.94);
+}
+:root[data-theme="light"] .hero-console {
+  background: rgba(227, 235, 229, 0.62);
+  border-left-color: rgba(9, 107, 59, 0.35);
+}
+:root[data-theme="light"] .console-body p {
+  color: #31483a;
+}
+:root[data-theme="light"] .hero-lede,
+:root[data-theme="light"] .section-heading > p,
+:root[data-theme="light"]
+  .flagship-copy
+  > p:not(.project-index):not(.project-tagline),
+:root[data-theme="light"] .project-card > p:not(.project-tagline),
+:root[data-theme="light"] .method-grid p,
+:root[data-theme="light"] .about-copy > p:not(.eyebrow):not(.about-lede),
+:root[data-theme="light"] .connect p:not(.eyebrow) {
+  color: var(--muted);
+}
+:root[data-theme="light"] .button-primary {
+  color: #f5fff8;
+}
+:root[data-theme="light"] .button-ghost {
+  color: var(--white);
+}
+:root[data-theme="light"] .flagship-visual,
+:root[data-theme="light"] .portrait-panel,
+:root[data-theme="light"] .brand-art {
+  background: #10241a;
+}
+:root[data-theme="light"] .method,
+:root[data-theme="light"] .connect {
+  background: #e3ebe5;
+}
+:root[data-theme="light"] .terminal-window {
+  background: #020a05;
+}
+:root[data-theme="light"] .terminal-screen {
+  color: #7fffb2;
+}
+:root[data-theme="light"] .terminal-screen .term-title {
+  color: #e8f4ec;
+}
+:root[data-theme="light"] .text-link {
+  color: var(--white);
+}
+:root[data-theme="light"] .project-card .text-link {
+  color: #1b3425;
+}
+:root[data-theme="light"] .project-card .text-link:hover {
+  color: var(--green);
+}
+:root[data-theme="light"] .tags li {
+  color: #476052;
+}
+:root[data-theme="light"] footer {
+  color: #52665a;
+}
 
 @media (max-width: 760px) {
   .header-actions {
