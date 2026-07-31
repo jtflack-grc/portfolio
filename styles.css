@@ -371,23 +371,93 @@ h2 em {
   position: relative;
   overflow: hidden;
   min-height: 470px;
-  background:
-    radial-gradient(circle at center, rgba(56, 232, 129, 0.1), transparent 66%),
-    linear-gradient(135deg, #07110c, #030705);
+  background: #030906;
 }
 .flagship-visual:before {
   content: "";
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 30px 30px;
-  opacity: 0.3;
+    linear-gradient(
+      90deg,
+      transparent 0 5%,
+      rgba(56, 232, 129, 0.13) 5% 31%,
+      transparent 31% 58%,
+      rgba(127, 255, 178, 0.08) 58% 91%,
+      transparent 91%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 16%,
+      rgba(127, 255, 178, 0.23) 16% 46%,
+      transparent 46% 71%,
+      rgba(56, 232, 129, 0.12) 71% 97%,
+      transparent 97%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 2%,
+      rgba(56, 232, 129, 0.08) 2% 20%,
+      transparent 20% 38%,
+      rgba(127, 255, 178, 0.18) 38% 76%,
+      transparent 76%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 29%,
+      rgba(56, 232, 129, 0.16) 29% 64%,
+      transparent 64% 83%,
+      rgba(127, 255, 178, 0.09) 83% 96%,
+      transparent 96%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 8%,
+      rgba(127, 255, 178, 0.1) 8% 41%,
+      transparent 41% 68%,
+      rgba(56, 232, 129, 0.2) 68% 88%,
+      transparent 88%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 18%,
+      rgba(56, 232, 129, 0.12) 18% 52%,
+      transparent 52% 62%,
+      rgba(127, 255, 178, 0.15) 62% 94%,
+      transparent 94%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 4%,
+      rgba(127, 255, 178, 0.18) 4% 26%,
+      transparent 26% 73%,
+      rgba(56, 232, 129, 0.11) 73% 99%,
+      transparent 99%
+    );
+  background-position:
+    0 9%,
+    0 20%,
+    0 34%,
+    0 51%,
+    0 67%,
+    0 81%,
+    0 93%;
+  background-size:
+    100% 1px,
+    100% 3px,
+    100% 1px,
+    100% 2px,
+    100% 1px,
+    100% 3px,
+    100% 1px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 5px rgba(56, 232, 129, 0.22));
 }
 .terminal-window {
   width: 82%;
   position: relative;
+  z-index: 1;
   border: 1px solid rgba(127, 255, 178, 0.35);
   background: #020a05;
   box-shadow:
