@@ -374,85 +374,7 @@ h2 em {
   background: #030906;
 }
 .flagship-visual:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(
-      90deg,
-      transparent 0 5%,
-      rgba(56, 232, 129, 0.13) 5% 31%,
-      transparent 31% 58%,
-      rgba(127, 255, 178, 0.08) 58% 91%,
-      transparent 91%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 16%,
-      rgba(127, 255, 178, 0.23) 16% 46%,
-      transparent 46% 71%,
-      rgba(56, 232, 129, 0.12) 71% 97%,
-      transparent 97%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 2%,
-      rgba(56, 232, 129, 0.08) 2% 20%,
-      transparent 20% 38%,
-      rgba(127, 255, 178, 0.18) 38% 76%,
-      transparent 76%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 29%,
-      rgba(56, 232, 129, 0.16) 29% 64%,
-      transparent 64% 83%,
-      rgba(127, 255, 178, 0.09) 83% 96%,
-      transparent 96%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 8%,
-      rgba(127, 255, 178, 0.1) 8% 41%,
-      transparent 41% 68%,
-      rgba(56, 232, 129, 0.2) 68% 88%,
-      transparent 88%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 18%,
-      rgba(56, 232, 129, 0.12) 18% 52%,
-      transparent 52% 62%,
-      rgba(127, 255, 178, 0.15) 62% 94%,
-      transparent 94%
-    ),
-    linear-gradient(
-      90deg,
-      transparent 0 4%,
-      rgba(127, 255, 178, 0.18) 4% 26%,
-      transparent 26% 73%,
-      rgba(56, 232, 129, 0.11) 73% 99%,
-      transparent 99%
-    );
-  background-position:
-    0 9%,
-    0 20%,
-    0 34%,
-    0 51%,
-    0 67%,
-    0 81%,
-    0 93%;
-  background-size:
-    100% 1px,
-    100% 3px,
-    100% 1px,
-    100% 2px,
-    100% 1px,
-    100% 3px,
-    100% 1px;
-  background-repeat: no-repeat;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 5px rgba(56, 232, 129, 0.22));
+  display: none;
 }
 .terminal-window {
   width: 82%;
@@ -1036,7 +958,71 @@ footer > p:nth-child(2) {
 
 /* Editorial aesthetic pass — retain i on GRC, remove generic AI-landing-page habits */
 body {
-  background: #07100c;
+  background:
+    linear-gradient(
+        90deg,
+        transparent 0 4%,
+        rgba(56, 232, 129, 0.13) 4% 27%,
+        transparent 27% 61%,
+        rgba(127, 255, 178, 0.08) 61% 90%,
+        transparent 90%
+      )
+      0 8% / 100% 1px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 14%,
+        rgba(127, 255, 178, 0.2) 14% 43%,
+        transparent 43% 72%,
+        rgba(56, 232, 129, 0.1) 72% 96%,
+        transparent 96%
+      )
+      0 18% / 100% 2px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 1%,
+        rgba(56, 232, 129, 0.08) 1% 19%,
+        transparent 19% 38%,
+        rgba(127, 255, 178, 0.15) 38% 78%,
+        transparent 78%
+      )
+      0 33% / 100% 1px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 27%,
+        rgba(56, 232, 129, 0.17) 27% 63%,
+        transparent 63% 84%,
+        rgba(127, 255, 178, 0.08) 84% 97%,
+        transparent 97%
+      )
+      0 49% / 100% 2px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 7%,
+        rgba(127, 255, 178, 0.09) 7% 39%,
+        transparent 39% 66%,
+        rgba(56, 232, 129, 0.18) 66% 89%,
+        transparent 89%
+      )
+      0 65% / 100% 1px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 17%,
+        rgba(56, 232, 129, 0.11) 17% 51%,
+        transparent 51% 64%,
+        rgba(127, 255, 178, 0.14) 64% 93%,
+        transparent 93%
+      )
+      0 80% / 100% 3px no-repeat fixed,
+    linear-gradient(
+        90deg,
+        transparent 0 3%,
+        rgba(127, 255, 178, 0.16) 3% 24%,
+        transparent 24% 74%,
+        rgba(56, 232, 129, 0.1) 74% 99%,
+        transparent 99%
+      )
+      0 93% / 100% 1px no-repeat fixed,
+    #07100c;
   font-family:
     "IBM Plex Sans",
     -apple-system,
