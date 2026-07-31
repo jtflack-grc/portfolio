@@ -1836,6 +1836,15 @@ body {
 :root[data-theme="light"] .hero-copy {
   border-left-color: rgba(9, 107, 59, 0.28);
 }
+:root[data-theme="light"] .signal-strip {
+  background: rgba(227, 235, 229, 0.9);
+}
+:root[data-theme="light"] .flagship {
+  background: var(--panel);
+}
+:root[data-theme="light"] .project-grid {
+  background: transparent;
+}
 
 @media (max-width: 560px) {
   .hero-dateline {
