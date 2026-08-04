@@ -9,7 +9,7 @@ function addWritingLane() {
 
   const writingStyles = document.createElement("link");
   writingStyles.rel = "stylesheet";
-  writingStyles.href = "writing.css?v=20260804-1";
+  writingStyles.href = "writing.css?v=20260804-2";
   document.head.appendChild(writingStyles);
 
   if (nav && !nav.querySelector('a[href="#writing"]')) {
@@ -64,76 +64,71 @@ function addWritingLane() {
         >
       </article>
 
-      <div class="writing-selected" aria-label="Selected i on GRC themes">
-        <article class="writing-card reveal">
+      <div class="writing-selected" aria-label="Selected i on GRC articles">
+        <a class="writing-card reveal" href="https://www.linkedin.com/pulse/can-you-red-team-ibm-i-john-flack-pabze" target="_blank" rel="noreferrer">
           <div class="writing-card-meta">
-            <span>Platform security</span><span>01</span>
+            <span>Platform security</span><span>01 ↗</span>
           </div>
-          <h3>Can You Really Red Team an IBM i?</h3>
+          <h3>Can You Red Team an IBM i?</h3>
           <p>
             Offensive-security thinking translated into object authorities,
             privileged profiles, journaling, job flows, and the operating reality
             of a platform that does not fail like a generic endpoint.
           </p>
-        </article>
+        </a>
 
-        <article class="writing-card reveal">
+        <a class="writing-card reveal" href="https://www.linkedin.com/pulse/black-swan-green-screen-john-flack-doyce" target="_blank" rel="noreferrer">
           <div class="writing-card-meta">
-            <span>Operational resilience</span><span>02</span>
+            <span>Operational resilience</span><span>02 ↗</span>
           </div>
-          <h3>When Reliability Becomes a Risk</h3>
+          <h3>Black Swan, Green Screen</h3>
           <p>
-            A stable platform can coexist with a fragile organization. Long
-            uptime does not resolve recovery dependencies, undocumented
-            knowledge, aging ownership, or institutional concentration risk.
+            A long-running platform can still carry tail risk, fragile recovery
+            assumptions, and dangerous confidence when uptime is treated as a
+            substitute for resilience evidence.
           </p>
-        </article>
+        </a>
 
-        <article class="writing-card reveal">
+        <a class="writing-card reveal" href="https://www.linkedin.com/pulse/alignment-continuous-reconciliation-john-flack-v4ele" target="_blank" rel="noreferrer">
           <div class="writing-card-meta">
-            <span>Quantitative risk</span><span>03</span>
+            <span>Governance engineering</span><span>03 ↗</span>
           </div>
-          <h3>From Fate to FAIR</h3>
+          <h3>Alignment Is Continuous Reconciliation</h3>
           <p>
-            A multi-part journey from vague risk labels toward defensible
-            scenarios, evidence-sensitive ranges, financial exposure,
-            uncertainty, and decisions that can be explained.
+            Governance maturity depends on keeping inventories, risk registers,
+            workflows, owners, exceptions, evidence, and systems from drifting
+            into separate versions of reality.
           </p>
-        </article>
+        </a>
 
-        <article class="writing-card reveal">
+        <a class="writing-card reveal" href="https://www.linkedin.com/pulse/dont-blink-john-flack-otnoe" target="_blank" rel="noreferrer">
           <div class="writing-card-meta">
-            <span>AI governance</span><span>04</span>
+            <span>Critical systems</span><span>04 ↗</span>
           </div>
-          <h3>Human in the Loop May Be Out of the Loop</h3>
+          <h3>Don't Blink</h3>
           <p>
-            A human approval step does not automatically create meaningful
-            oversight when speed, interface design, authority, information
-            quality, and automation pressure have already narrowed the choice.
+            OT security offers IBM i governance a sharper vocabulary for zones,
+            conduits, consequence, recovery, and the difference between a system
+            that keeps running and one that can explain itself.
           </p>
-        </article>
+        </a>
       </div>
     </div>
 
     <div class="writing-archive reveal">
       <div>
-        <p class="eyebrow">More from the field notes</p>
-        <p class="writing-archive-list">
-          <span>Can You Blue Team an IBM i?</span><i></i>
-          <span>Test LPAR Is Production Data Wearing Sweatpants</span><i></i>
-          <span>FAIR-y Tales</span><i></i>
-          <span>ISO governance on IBM i</span><i></i>
-          <span>Modernization, GRC &amp; IBM i</span><i></i>
-          <span>AI assurance and agentic trust</span>
-        </p>
+        <p class="eyebrow">More long-form field notes</p>
+        <div class="writing-archive-grid">
+          <a href="https://www.linkedin.com/pulse/can-you-blue-team-ibm-i-john-flack-w5bse" target="_blank" rel="noreferrer"><span>Can You Blue Team an IBM i?</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/pulse/ibm-i-offboarding-profiles-you-didnt-revoke-john-flack-oplie" target="_blank" rel="noreferrer"><span>IBM i Offboarding</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/pulse/soc-2-ibm-i-john-flack-0bj8e" target="_blank" rel="noreferrer"><span>SOC 2 &amp; the IBM i</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/pulse/frameworks-coso-ibm-i-john-flack-dcrne" target="_blank" rel="noreferrer"><span>COSO &amp; the IBM i</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/pulse/i-grc-is0-27701-clause-9-ibm-john-flack-n5jwe" target="_blank" rel="noreferrer"><span>ISO 27701: Clause 9</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/pulse/i-grc-is0-27701-clause-10-ibm-john-flack-6nz1e" target="_blank" rel="noreferrer"><span>ISO 27701: Clause 10</span><b>↗</b></a>
+          <a href="https://ibmireference.blogspot.com/search/label/IBM%20%22%28A%29i%20on%20GRC%20-%20ISO%2027001%22" target="_blank" rel="noreferrer"><span>ISO 27001 IBM i Series</span><b>↗</b></a>
+          <a href="https://www.linkedin.com/in/john-flack/recent-activity/articles/" target="_blank" rel="noreferrer"><span>Complete Article Archive</span><b>↗</b></a>
+        </div>
       </div>
-      <a
-        class="button button-ghost"
-        href="https://www.linkedin.com/in/john-flack/recent-activity/articles/"
-        target="_blank"
-        rel="noreferrer"
-        >Explore all writing <span>↗</span></a
-      >
     </div>
   `;
 
