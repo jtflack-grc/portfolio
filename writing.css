@@ -1,0 +1,283 @@
+/* i on GRC editorial portfolio lane */
+#writing {
+  scroll-margin-top: 90px;
+}
+
+.writing {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid rgba(127, 255, 178, 0.14);
+  border-bottom: 1px solid rgba(127, 255, 178, 0.14);
+  background:
+    linear-gradient(115deg, rgba(56, 232, 129, 0.045), transparent 42%),
+    rgba(4, 13, 8, 0.78);
+}
+
+.writing:before {
+  content: "i on GRC";
+  position: absolute;
+  right: -0.04em;
+  top: 0.18em;
+  z-index: 0;
+  color: rgba(127, 255, 178, 0.035);
+  font: 600 clamp(5rem, 13vw, 12rem)/1 "IBM Plex Mono", monospace;
+  letter-spacing: -0.08em;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.writing > * {
+  position: relative;
+  z-index: 1;
+}
+
+.writing-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(3, 10, 6, 0.42);
+}
+
+.writing-feature {
+  min-height: 590px;
+  display: flex;
+  flex-direction: column;
+  padding: 3.6rem 4.5rem 3.6rem 0;
+  border-right: 1px solid var(--line);
+}
+
+.writing-meta,
+.writing-card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: #71897a;
+  font: 500 0.62rem "IBM Plex Mono", monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.writing-meta span:first-child,
+.writing-card-meta span:first-child {
+  color: var(--green);
+}
+
+.writing-feature h3 {
+  max-width: 760px;
+  margin: auto 0 1.4rem;
+  font-size: clamp(2.5rem, 4.2vw, 4.6rem);
+  font-weight: 300;
+  line-height: 1.02;
+  letter-spacing: -0.048em;
+}
+
+.writing-deck {
+  max-width: 720px;
+  margin-bottom: 1.4rem;
+  color: #c8d9ce;
+  font-size: 1.18rem;
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+.writing-feature > p:not(.writing-deck) {
+  max-width: 690px;
+  margin-bottom: 2rem;
+  color: var(--muted);
+}
+
+.writing-feature .text-link {
+  align-self: flex-start;
+}
+
+.writing-selected {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.writing-card {
+  min-height: 295px;
+  padding: 2.5rem 2.4rem;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(56, 232, 129, 0.028), transparent 58%);
+}
+
+.writing-card:nth-child(odd) {
+  border-right: 1px solid var(--line);
+}
+
+.writing-card:nth-child(n + 3) {
+  border-bottom: 0;
+}
+
+.writing-card h3 {
+  max-width: 20rem;
+  margin: 3rem 0 1rem;
+  font-size: 1.42rem;
+  line-height: 1.22;
+  letter-spacing: -0.025em;
+}
+
+.writing-card p {
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.writing-archive {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 4rem;
+  padding-top: 3.4rem;
+}
+
+.writing-archive .eyebrow {
+  margin-bottom: 1rem;
+}
+
+.writing-archive-list {
+  max-width: 900px;
+  margin: 0;
+  color: #9db2a4;
+  font-size: 0.92rem;
+  line-height: 2;
+}
+
+.writing-archive-list span {
+  white-space: nowrap;
+}
+
+.writing-archive-list i {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  margin: 0 0.65rem 0.24rem;
+  background: var(--amber);
+}
+
+.inline-link {
+  color: var(--green);
+  text-decoration-color: rgba(127, 255, 178, 0.38);
+  text-underline-offset: 0.2em;
+}
+
+.inline-link:hover {
+  color: var(--white);
+}
+
+:root[data-theme="light"] .writing {
+  border-color: var(--line);
+  background: #e3ebe5;
+}
+
+:root[data-theme="light"] .writing:before {
+  color: rgba(9, 107, 59, 0.045);
+}
+
+:root[data-theme="light"] .writing-layout {
+  background: rgba(237, 243, 239, 0.76);
+}
+
+:root[data-theme="light"] .writing-deck {
+  color: #263c2e;
+}
+
+:root[data-theme="light"] .writing-feature > p:not(.writing-deck),
+:root[data-theme="light"] .writing-card p,
+:root[data-theme="light"] .writing-archive-list {
+  color: var(--muted);
+}
+
+:root[data-theme="light"] .writing-card {
+  background: linear-gradient(135deg, rgba(9, 107, 59, 0.035), transparent 58%);
+}
+
+:root[data-theme="light"] .writing-meta,
+:root[data-theme="light"] .writing-card-meta {
+  color: #66796d;
+}
+
+:root[data-theme="light"] .writing .text-link {
+  color: #1b3425;
+}
+
+:root[data-theme="light"] .writing .text-link:hover,
+:root[data-theme="light"] .inline-link:hover {
+  color: var(--green);
+}
+
+@media (max-width: 900px) {
+  .writing-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .writing-feature {
+    min-height: 0;
+    padding: 3rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .writing-feature h3 {
+    margin-top: 6rem;
+  }
+
+  .writing-card {
+    min-height: 250px;
+  }
+
+  .writing-archive {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.8rem;
+  }
+
+  .writing-archive .button {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 620px) {
+  .writing:before {
+    top: 0.55em;
+    font-size: 4.4rem;
+  }
+
+  .writing-selected {
+    grid-template-columns: 1fr;
+  }
+
+  .writing-card,
+  .writing-card:nth-child(odd),
+  .writing-card:nth-child(n + 3) {
+    min-height: 0;
+    padding: 2.25rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .writing-card:last-child {
+    border-bottom: 0;
+  }
+
+  .writing-card h3 {
+    margin-top: 2.2rem;
+  }
+
+  .writing-feature h3 {
+    margin-top: 5rem;
+    font-size: clamp(2.45rem, 12vw, 3.35rem);
+  }
+
+  .writing-deck {
+    font-size: 1.04rem;
+  }
+
+  .writing-archive-list span {
+    white-space: normal;
+  }
+}
