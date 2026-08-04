@@ -139,26 +139,6 @@
   margin-bottom: 1rem;
 }
 
-.writing-archive-list {
-  max-width: 900px;
-  margin: 0;
-  color: #9db2a4;
-  font-size: 0.92rem;
-  line-height: 2;
-}
-
-.writing-archive-list span {
-  white-space: nowrap;
-}
-
-.writing-archive-list i {
-  display: inline-block;
-  width: 16px;
-  height: 1px;
-  margin: 0 0.65rem 0.24rem;
-  background: var(--amber);
-}
-
 .inline-link {
   color: var(--green);
   text-decoration-color: rgba(127, 255, 178, 0.38);
@@ -167,6 +147,72 @@
 
 .inline-link:hover {
   color: var(--white);
+}
+
+.writing-card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.writing-card h3 {
+  color: var(--white);
+  transition: color 0.2s ease;
+}
+
+.writing-card:hover,
+.writing-card:focus-visible {
+  background: linear-gradient(135deg, rgba(56, 232, 129, 0.075), transparent 62%);
+  box-shadow: inset 3px 0 0 var(--green2);
+}
+
+.writing-card:hover h3,
+.writing-card:focus-visible h3 {
+  color: var(--green);
+}
+
+.writing-archive {
+  display: block;
+}
+
+.writing-archive-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.writing-archive-grid a {
+  min-height: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.35rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: #b7c9bd;
+  text-decoration: none;
+  font-size: 0.84rem;
+  line-height: 1.4;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.writing-archive-grid a:hover,
+.writing-archive-grid a:focus-visible {
+  color: var(--green);
+  background: rgba(56, 232, 129, 0.045);
+}
+
+.writing-archive-grid b {
+  flex: 0 0 auto;
+  color: var(--amber);
+  font-weight: 500;
 }
 
 :root[data-theme="light"] .writing {
@@ -187,13 +233,24 @@
 }
 
 :root[data-theme="light"] .writing-feature > p:not(.writing-deck),
-:root[data-theme="light"] .writing-card p,
-:root[data-theme="light"] .writing-archive-list {
+:root[data-theme="light"] .writing-card p {
   color: var(--muted);
 }
 
 :root[data-theme="light"] .writing-card {
   background: linear-gradient(135deg, rgba(9, 107, 59, 0.035), transparent 58%);
+}
+
+:root[data-theme="light"] .writing-card h3,
+:root[data-theme="light"] .writing-archive-grid a {
+  color: #1b3425;
+}
+
+:root[data-theme="light"] .writing-card:hover h3,
+:root[data-theme="light"] .writing-card:focus-visible h3,
+:root[data-theme="light"] .writing-archive-grid a:hover,
+:root[data-theme="light"] .writing-archive-grid a:focus-visible {
+  color: var(--green);
 }
 
 :root[data-theme="light"] .writing-meta,
@@ -230,14 +287,8 @@
     min-height: 250px;
   }
 
-  .writing-archive {
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 1.8rem;
-  }
-
-  .writing-archive .button {
-    justify-self: start;
+  .writing-archive-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -277,7 +328,11 @@
     font-size: 1.04rem;
   }
 
-  .writing-archive-list span {
-    white-space: normal;
+  .writing-archive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .writing-archive-grid a {
+    min-height: 72px;
   }
 }
