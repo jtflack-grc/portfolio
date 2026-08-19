@@ -273,21 +273,21 @@
             </div>
             <h3>IBM i Vulnerability Curator</h3>
             <p class="project-tagline">
-              IBM PSIRT → applicable fix → verification evidence
+              IBM CVE claim → local fix state → reviewable evidence
             </p>
             <p>
-              Companion to Legacy Control Lab: a PSIRT-first queue that groups
-              related CVEs by IBM bulletin, preserves release/PTF applicability,
-              explains remediation priority, compares optional browser-local PTF
-              inventory, and packages expected versus observed evidence. Includes
-              a source-gated IronTerm DSPPTF verification rail. Not a scanner of
-              record or a live partition connection.
+              IBM's CVE_INFO service identifies CVEs affecting a release, but not
+              whether each correcting fix is applied. The curator resolves IBM
+              bulletin remedies, supplies an ACS-ready SQL evidence kit, compares
+              browser-local PTF and Group PTF exports, and packages expected versus
+              observed evidence. The 5250 path remains available as a closed legacy
+              fallback. Not a scanner of record or a live partition connection.
             </p>
             <ul class="tags">
               <li>IBM i</li>
               <li>GRC Engineering</li>
               <li>IBM PSIRT</li>
-              <li>PTF evidence</li>
+              <li>SQL fix evidence</li>
             </ul>
             <a
               class="text-link"
