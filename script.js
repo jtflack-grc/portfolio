@@ -1,3 +1,68 @@
+function addChangeProof() {
+  const workSection = document.getElementById("work");
+  const projectGrid = workSection?.querySelector(".project-grid");
+
+  if (!workSection || !projectGrid || document.getElementById("changeproof-project")) {
+    return;
+  }
+
+  const workIntro = workSection.querySelector(".section-heading > p");
+  if (workIntro) {
+    workIntro.textContent =
+      "Each project starts with a governance problem and ends with something usable: a lab, an evidence runtime, a work queue, a decision model, a control pipeline, or an accountable intervention.";
+  }
+
+  const changeProof = document.createElement("article");
+  changeProof.className = "project-card reveal";
+  changeProof.id = "changeproof-project";
+  changeProof.innerHTML = `
+    <div class="card-top">
+      <span>02</span><span>CHANGE ASSURANCE RUNTIME</span>
+    </div>
+    <h3>ChangeProof</h3>
+    <p class="project-tagline">AI can write the change. Prove it deserves to ship.</p>
+    <p>
+      A profile-driven software change-assurance runtime that combines source
+      discovery, scoped execution receipts, cross-artifact inference, evidence
+      classification, review compression, and explicit validation boundaries
+      across modern and legacy workloads. Built for the IBM TechXchange 2026
+      Pre-conference Dev Day Hackathon with IBM Bob 2.0.
+    </p>
+    <ul class="tags">
+      <li>Evidence engineering</li>
+      <li>Software assurance</li>
+      <li>IBM Bob 2.0</li>
+      <li>IBM i</li>
+      <li>CI/CD</li>
+    </ul>
+    <div class="repo-list">
+      <a
+        href="https://jtflack-grc.github.io/changeproof/"
+        target="_blank"
+        rel="noreferrer"
+        ><span>Explore ChangeProof</span><b>↗</b></a
+      >
+      <a
+        href="https://github.com/jtflack-grc/changeproof"
+        target="_blank"
+        rel="noreferrer"
+        ><span>Inspect the source</span><b>↗</b></a
+      >
+    </div>
+  `;
+
+  projectGrid.prepend(changeProof);
+
+  projectGrid.querySelectorAll(":scope > .project-card").forEach((card, index) => {
+    const number = card.querySelector(".card-top span:first-child");
+    if (!number) return;
+    const ordinal = index + 2;
+    number.textContent = card.classList.contains("lab-card")
+      ? `${ordinal}+`
+      : String(ordinal).padStart(2, "0");
+  });
+}
+
 function addWritingLane() {
   const methodSection = document.getElementById("method");
   const aboutSection = document.getElementById("about");
@@ -150,6 +215,7 @@ function addWritingLane() {
   }
 }
 
+addChangeProof();
 addWritingLane();
 
 document.getElementById("year").textContent = new Date().getFullYear();
