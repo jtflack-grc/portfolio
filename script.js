@@ -1,3 +1,10 @@
+const writingStyles = document.querySelector(
+  'link[rel="stylesheet"][href^="writing.css"]',
+);
+if (writingStyles) {
+  writingStyles.setAttribute("href", "writing.css?v=20260831-1");
+}
+
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
