@@ -6,6 +6,13 @@ function addChangeProof() {
     return;
   }
 
+  projectGrid.querySelectorAll(":scope > .project-card").forEach((card) => {
+    const title = card.querySelector("h3")?.textContent?.trim();
+    if (title === "ChangeProof") {
+      card.remove();
+    }
+  });
+
   const workIntro = workSection.querySelector(".section-heading > p");
   if (workIntro) {
     workIntro.textContent =
@@ -28,6 +35,12 @@ function addChangeProof() {
       across modern and legacy workloads. Built for the IBM TechXchange 2026
       Pre-conference Dev Day Hackathon with IBM Bob 2.0.
     </p>
+    <div class="project-proof">
+      <p><strong>Problem</strong> A requested change can pass its functional test and still be unsafe to release because related source, configuration, schedules, or target-only validation remain outside the ticket.</p>
+      <p><strong>Built</strong> A reusable evidence pipeline that separates executed, observed, and inferred evidence; preserves release holds when acceptance passes but the evidence chain is incomplete; and demonstrates reuse across both an IBM i-style ORDERPRO workload and an unrelated Node/config workload.</p>
+      <p><strong>Inspect</strong> Live Review Workspace · baseline and post-change evidence packs · machine-readable findings · CI evidence freeze · independent REPORT-GW reuse proof · public source.</p>
+    </div>
+    <p class="provenance">Built for the IBM TechXchange 2026 Pre-conference Dev Day Hackathon. ORDERPRO is the primary demonstration workload; the evidence pipeline is the reusable product surface.</p>
     <ul class="tags">
       <li>Evidence engineering</li>
       <li>Software assurance</li>
