@@ -185,4 +185,44 @@ function installLclAttractMode() {
   }
 }
 
+function applyCloudAssuranceCopy() {
+  const signal = Array.from(document.querySelectorAll(".signal-strip span")).find(
+    (item) => item.textContent.trim() === "OSCAL",
+  );
+  if (signal) signal.textContent = "Cloud Assurance";
+
+  const card = Array.from(document.querySelectorAll(".project-card")).find(
+    (item) => item.querySelector("h3")?.textContent.trim() === "GRC Engineering Pipeline",
+  );
+  if (!card) return;
+
+  const cardLabel = card.querySelector(".card-top span:last-child");
+  if (cardLabel) cardLabel.textContent = "CLOUD ASSURANCE PIPELINE";
+
+  const tagline = card.querySelector(".project-tagline");
+  if (tagline) tagline.textContent = "Cloud controls that produce their own evidence.";
+
+  const summary = tagline?.nextElementSibling;
+  if (summary?.tagName === "P") {
+    summary.textContent =
+      "An AWS assurance pipeline where Terraform defines control-relevant configuration, Rego and Conftest test it, GitHub Actions gate changes, CloudTrail and Security Hub produce native monitoring evidence, Cosign signs decisions, S3 Object Lock preserves proof, and OSCAL keeps control claims traceable.";
+  }
+
+  const proof = card.querySelector(".project-proof");
+  if (proof) {
+    proof.innerHTML = `
+      <p><strong>Problem</strong> Cloud controls are easy to declare and harder to prove when implementation, policy decisions, runtime telemetry, retained evidence, and control mappings live in separate systems.</p>
+      <p><strong>Built</strong> An end-to-end assurance graph spanning NIST SC-28, AC-3, CM-6, and AU-3 across infrastructure as code, executable policy, pull-request enforcement, AWS-native monitoring, signed evidence, immutable retention, and machine-readable OSCAL mappings.</p>
+      <p><strong>Inspect</strong> Terraform · OPA/Rego · Conftest · GitHub Actions · CloudTrail · Security Hub · Cosign · S3 Object Lock · OSCAL · blocked-regression proof.</p>
+    `;
+  }
+
+  const tags = card.querySelector(".tags");
+  if (tags) {
+    tags.innerHTML =
+      "<li>AWS Security</li><li>Policy as Code</li><li>Evidence Engineering</li><li>OSCAL</li><li>CI/CD</li>";
+  }
+}
+
+applyCloudAssuranceCopy();
 installLclAttractMode();
