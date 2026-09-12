@@ -1,0 +1,68 @@
+name: Clean Impact Promotion
+
+on:
+  push:
+    branches:
+      - feat/promote-impact
+
+permissions:
+  contents: write
+
+jobs:
+  clean-source:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/promote-impact
+          fetch-depth: 0
+
+      - name: Normalize selected-system source indentation
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          path = Path('index.html')
+          text = path.read_text()
+          start = text.index('        <div class="project-grid">')
+          end = text.index('          <article class="project-card lab-card lab-archive reveal">', start)
+          block = text[start:end]
+
+          cleaned = []
+          for line in block.splitlines():
+              line = line.rstrip()
+              leading = len(line) - len(line.lstrip(' '))
+              if leading >= 20:
+                  line = line[10:]
+              cleaned.append(line)
+
+          block = '\n'.join(cleaned)
+          block = re.sub(r'\n[ \t]*\n(?:[ \t]*\n)+', '\n\n', block)
+          updated = text[:start] + block + '\n\n' + text[end:]
+          path.write_text(updated)
+          PY
+
+      - name: Verify source and project order
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('index.html').read_text()
+          order = ['<h3>IMPACT!</h3>', '<h3>ChangeProof</h3>', '<h3>ControlSift</h3>', '<h3>INQUISITION</h3>', '<h3>IBM i Vulnerability Curator</h3>', '<h3>GRC Engineering Pipeline</h3>']
+          positions = [text.index(item) for item in order]
+          assert positions == sorted(positions)
+          assert '                      <h3>IMPACT!</h3>' not in text
+          assert 'class="project-card amber-card reveal" id="impact-project"' in text
+          PY
+
+      - name: Commit cleanup
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No cleanup needed."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Normalize promoted portfolio source"
+          git push origin HEAD:feat/promote-impact
