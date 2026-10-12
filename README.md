@@ -10,6 +10,7 @@ The site brings together practical work across legacy-system controls, cyber ris
 - Theme preference is stored locally in the visitor's browser.
 - The site uses semantic HTML, reduced-motion support, keyboard-visible controls, and responsive layouts.
 - Social-sharing metadata uses `social-card.png`; the source artwork is retained in `social-card.svg`.
+- The home page is intentionally curated; new projects should replace featured work only when they materially strengthen the portfolio story.
 
 ## Local preview
 
